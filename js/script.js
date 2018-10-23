@@ -2,69 +2,67 @@
 var joueur;
 var ia;
 
-
-//le joueur fait son choix
+//le joueur fait son choix et affiche le résultat
 
 function choixPierre(){
-     document.getElementById("x").src="images/pierre.png"
+    document.getElementById("x").src="images/pierre.png";
+    joueur = 0;
 }
 function choixFeuille(){
-    document.getElementById("x").src="images/feuille.png"
+    document.getElementById("x").src="images/feuille.png";
+    joueur = 1;
 }
 function choixCiseaux(){
-    document.getElementById("x").src="images/ciseaux.png"
+    document.getElementById("x").src="images/ciseaux.png";
+    joueur = 2;
 }
 
-// function choixPierre() {
-//     var pierre = document.getElementsByClassName("playerChoice");
-//     pierre[0].innerHTML = pPierre;
-// }
 
-
-
-
-
-
-
-
-
-// document.getElementsByClassName("pierre").onclick = pierre;
-// function pierre() {
-//    document.getElementsByClassName("playerChoice").innerHTML = "0";
-// }
-// document.getElementsByClassName("feuille").onclick = feuille;
-// function pierre() {
-//    document.getElementsByClassName("playerChoice").innerHTML = "0";
-// }
-
-
-//l'ia fait son choix
+//l'ia fait son choix et affiche le résultat
 function iaTake() {
-    ia = Math.floor(Math.random() *2)+1;
-    console.log(ia);
+    ia = Math.floor(Math.random() *3);
+    console.log("ia " +ia);
+    console.log("humain " +joueur);
+    if (ia ==0) {
+        document.getElementById("xIa").src="images/pierre.png";
+    }
+    else if (ia == 1) {
+        document.getElementById("xIa").src="images/feuille.png";
+    }
+    else {
+        document.getElementById("xIa").src="images/ciseaux.png";
+    }
 }
-
-
-
-//function playerTake(){
-
-
-//}
-
-//affichage des choix sur la page
 
 //comparaison entre les deux choix
+window.addEventListener("click", function compare() {
+    if (ia == joueur) {
+        console.log("Match Nul !");
+            function result(){
+            document.getElementsById("div#resu").style.color="blue";
+            document.getElementsById("div#resu").innerHTML="EGALITÉ !";
+        }
+    }
+    else if (ia == 0 && joueur >0 || joueur !==1){
+        console.log("L'IA gagne !");
+    }
+    else if (ia == 2 && joueur <2 || joueur >0){
+        console.log("L'IA Gagne !");
+    }
+    else if (ia == 1 && joueur == 1){
+        console.log("L'IA Gagne!");
+    }
+    else {
+        console.log("l'humain Gagne!");
+    }
+}
+);
 
 
-//afficher le resultat
+
+//afficher le resultat en texte
 
 
-//résultat de l'IA
-// function printIaResult() {
-//     document.getElementById("iaChoice").innetHTML = ia;
-//     console.log(ia);
-//     // document.write(ia);
-// }
 
 
 //nouvelle partie?
