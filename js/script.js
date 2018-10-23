@@ -1,6 +1,7 @@
 //déclaration des variables
 var joueur;
 var ia;
+var win;
 
 //le joueur fait son choix et affiche le résultat
 
@@ -38,15 +39,18 @@ function iaTake() {
 window.addEventListener("click", function compare() {
     if (ia == joueur) {
         console.log("Match Nul !");
-            function result(){
-            document.getElementsById("div#resu").style.color="blue";
-            document.getElementsById("div#resu").innerHTML="EGALITÉ !";
-        }
+        function result(){
+            document.getElementById("resu").innerHTML="EGALITÉ !";
+            console.log("test")
+            document.getElementById("resu").innerText="EGALITÉ! ";
+            result;
+        
     }
-    else if (ia == 0 && joueur >0 || joueur !==1){
+}
+    else if (ia == 0 && joueur >0 || joueur !=1){
         console.log("L'IA gagne !");
     }
-    else if (ia == 2 && joueur <2 || joueur >0){
+    else if (ia == 2 && joueur <2 || joueur !=0){
         console.log("L'IA Gagne !");
     }
     else if (ia == 1 && joueur == 1){
@@ -61,7 +65,11 @@ window.addEventListener("click", function compare() {
 
 
 //afficher le resultat en texte
-
+// if (win == 0){
+// function result(){
+//        document.getElementById("resu").innerHTML="EGALITÉ !";
+// }
+// }
 
 
 
